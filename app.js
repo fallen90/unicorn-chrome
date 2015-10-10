@@ -1,3 +1,15 @@
+var unicorn = function(){
+    var imgs = document.getElementsByTagName("img");
+    for (var i = imgs.length - 1; i >= 0; i--) {
+        var img = imgs[i];
+        var width = img.width;
+        var random = Math.random();
+        img.src = 'http://unicornify.appspot.com/avatar/' + random + '?s=' + width;
+    };
+};
+
+unicorn();
 setInterval(function(){
-	$('img').attr('src','https://s-media-cache-ak0.pinimg.com/236x/01/9a/1f/019a1fcec1ff411b8c808355cb0e7953.jpg');
-},250);
+	unicorn();
+},60000);
+
